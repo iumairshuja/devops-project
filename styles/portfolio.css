@@ -1,0 +1,141 @@
+.portfolio-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(42, 51, 66, 0.8), rgba(42, 51, 66, 0.8)),
+                url('../assets/portfolio-hero-section.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    padding: 0 5%;
+    margin-top: 60px;
+}
+
+.portfolio-item:nth-child(1) .portfolio-image {
+    background: url('../assets/ecommerice-portfolio.avif') center/cover;
+}
+
+.portfolio-item:nth-child(2) .portfolio-image {
+    background: url('../assets/healtcare-portfolio.avif') center/cover;
+}
+
+.portfolio-item:nth-child(3) .portfolio-image {
+    background: url('../assets/cloud-portfolio.avif') center/cover;
+}
+
+.portfolio-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-content p {
+    font-size: 1.2rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    height: 200px;
+    background-color: var(--accent-color);
+}
+
+.portfolio-info {
+    padding: 1.5rem;
+}
+
+.portfolio-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.testimonials {
+    background-color: var(--accent-color);
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: var(--text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.client-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.client-info p {
+    color: var(--secondary-color);
+    font-style: normal;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .portfolio-hero {
+        height: 40vh;
+    }
+    
+    .portfolio-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+}
