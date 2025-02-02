@@ -13,8 +13,8 @@ jobs:
           ref: ${{github.ref}}
       - name: Lint HTML and CSS Code 
         run: |
-          npx htmlhint "/*.html"
-          npx stylelint "/*.css"
+                npx htmlhint@1.1.4 "/*.html"
+                npx stylelint "/*.css"
       - name: Build Artifact 
         run: |
           npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
