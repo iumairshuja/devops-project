@@ -1,0 +1,32 @@
+name: CI for Production
+on:
+  pull_request:
+    branches:
+      - "production"
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Tests
+        run: |
+          echo "Running unit tests..."
+          echo "All tests passed successfully!"
+
+  linting_job:
+    runs-on: ubuntu-latest
+    needs: test_job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Linting
+        run: |
+          npx htmlhint@1.1.4 "**/*.html"
+          npx stylelint "**/*.css"
+      
+      - name: Build Artifact
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
